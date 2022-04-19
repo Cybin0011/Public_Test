@@ -38,7 +38,6 @@ public class MyDate {
         if (obj instanceof MyDate) {
             obj_date = (MyDate) obj;
         }
-
         if (this.day == obj_date.day && this.month == obj_date.month && this.year == obj_date.year) {
             return true;
         } else {
