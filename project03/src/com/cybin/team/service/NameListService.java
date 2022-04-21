@@ -85,7 +85,7 @@ public class NameListService {
     public Employee[] getAllEmployees() {
         return employees;
     }
-    public Employee getEmployee(int id)throws Exception{
+    public Employee getEmployee(int id)throws TeamException{
         for (int i = 0; i < employees.length; i++) {
             if(id==employees[i].getId())
                 return employees[i];

@@ -1,7 +1,8 @@
-package com.cybin.team.junit;
+package com.cybin.team.service.junit;
 
 import com.cybin.team.domain.Employee;
 import com.cybin.team.service.NameListService;
+import com.cybin.team.service.TeamException;
 
 /**
  * @author Chen Yuanbin
@@ -28,7 +29,7 @@ public class NameListServiceTest {
         try {
             employee = service.getEmployee(id);
             System.out.println(employee.toString());
-        } catch (Exception e) {
+        } catch (TeamException e) {
             System.out.println(e.getMessage());
         }
         return employee;
