@@ -73,12 +73,15 @@ public class TeamService {
                 throw new TeamException("程序员数已上限，不能再加入程序员");
         }
 
+
         //非法情况都排除,后添加成员,
-        team[total++] = (Programmer) employee;
+        this.team[total++] = (Programmer) employee;
         //员工状态更新
-        team[total].setStatus(Status.BUSY);
+
+        this.team[total-1].setStatus(Status.BUSY);
         //设置员工团队中的id
-        team[total].setMemberid(counter++);
+        this.team[total-1].setMemberid(counter++);
+
     }
 
     public void removeMenber(int menberID) throws TeamException {

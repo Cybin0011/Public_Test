@@ -16,7 +16,7 @@ import java.security.interfaces.ECKey;
 public class TeamView {
     private NameListService namelistservice = new NameListService();
     private TeamService teamservice = new TeamService();
-    Programmer[] team = teamservice.getTeam();
+
 
     public void enterMainMenu() {
 
@@ -65,6 +65,7 @@ public class TeamView {
     }
 
     private void getTeam() {
+        Programmer[] team = teamservice.getTeam();
         System.out.println("查看团队成员");
         System.out.println("--------------------团队成员列表---------------------\n");
         if (team == null || team.length == 0) {
@@ -87,8 +88,12 @@ public class TeamView {
         try {
             Employee emp=namelistservice.getEmployee(id);
             teamservice.addMenber(emp);
+            System.out.println("添加成功！");
         } catch (TeamException e) {
             System.out.println(e.getMessage());
+        } catch (NullPointerException e)
+       {
+            System.out.println("nullException");
         }
 
     }
