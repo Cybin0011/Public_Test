@@ -34,6 +34,6 @@ public class Designer extends Programmer {
 
     @Override
     public String getDetailsForTeam() {
-        return getDetailsForTeam()+"\t设计师\t"+getBonus();
+        return getTeamBasicDetails()+"\t设计师\t"+getBonus();
     }
 }

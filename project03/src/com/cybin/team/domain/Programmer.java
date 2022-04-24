@@ -48,10 +48,10 @@ public class Programmer extends Employee{
         return getDetails()+"\t程序员\t"+getStatus()+"\t\t\t"+equipment.getDescription();
     }
 
-   public String getaTeamBasicDetails(){
-        return getMemberid()+"/"+getId()+"\t"+getName()+"\t"+getAge();
+   public String getTeamBasicDetails(){
+        return getMemberid()+"/"+getId()+"\t"+getName()+"\t"+getAge()+"\t"+getSalary();
    }
    public String getDetailsForTeam(){
-        return getDetailsForTeam()+"\t程序员\t";
+        return getTeamBasicDetails()+"\t程序员\t";
     }
 }

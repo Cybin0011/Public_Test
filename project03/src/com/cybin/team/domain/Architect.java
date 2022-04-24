@@ -32,6 +32,6 @@ public class Architect extends Designer{
 
     @Override
     public String getDetailsForTeam() {
-        return getDetailsForTeam()+"\t架构师\t"+getBonus()+"\t"+getStock();
+        return getTeamBasicDetails()+"\t架构师\t"+getBonus()+"\t"+getStock();
     }
 }

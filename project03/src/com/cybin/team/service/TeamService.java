@@ -88,14 +88,12 @@ public class TeamService {
         //删除失败的情况
         //团队为空
         int i = 0;
-        if (total == 0)
-            throw new TeamException("团队中无人，删除失败");
-        //查问此人
+        //查无此人
         for (; i < total; i++) {
             if (menberID == team[i].getMemberid())
                 break;
         }
-        if (team[i].getMemberid() != menberID)
+        if (i==total)
             throw new TeamException("团队中没有此人，删除失败");
         //删除
         team[i].setStatus(Status.FREE);

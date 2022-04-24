@@ -73,7 +73,7 @@ public class TeamView {
         } else {
             System.out.println("TDI/ID\t姓名\t年龄\t工资\t职位\t奖金\t股票");
             for (int i = 0; i < team.length; i++) {
-                System.out.println(team[i].toString());
+                System.out.println(team[i].getDetailsForTeam());
             }
             System.out.println("-----------------------------------------------------\n");
         }
@@ -86,20 +86,33 @@ public class TeamView {
         System.out.println("请输入要添加成员的ID：");
         int id = TSUtility.readInt();
         try {
-            Employee emp=namelistservice.getEmployee(id);
+            Employee emp = namelistservice.getEmployee(id);
             teamservice.addMenber(emp);
             System.out.println("添加成功！");
         } catch (TeamException e) {
             System.out.println(e.getMessage());
-        } catch (NullPointerException e)
-       {
+        } catch (NullPointerException e) {
             System.out.println("nullException");
         }
 
     }
 
     private void deleteMenber() {
-        System.out.println("删除团队成员");
+        System.out.println("---------------------删除团队成员---------------------\n");
+        if (teamservice.getTeam().length == 0 || (teamservice.getTeam() == null))
+            System.out.println("开发团队为空");
+        else {
+            System.out.println("请输入想要删除人员在团队的id");
+            int Del_Tid = TSUtility.readInt();
+            try {
+                teamservice.removeMenber(Del_Tid);
+                System.out.println("删除成功");
+            } catch (TeamException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        System.out.println("----------------------------------------------------\n");
     }
 
 
