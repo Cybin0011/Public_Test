@@ -9,7 +9,7 @@ import javax.swing.plaf.basic.BasicTreeUI;
  * @description 创建3个窗口卖票, 100张
  * @create 2022-04-24 17:05
  */
-class Window extends Thread {
+class Window4 extends Thread {
     static Object object=new Object();
     public static int ticket=100;
     @Override
@@ -33,11 +33,11 @@ class Window extends Thread {
     }
 }
 
-public class WindowTest {
+public class WindowTest4 {
     public static void main(String[] args) {
-        Window thread1=new Window();
-        Window thread2=new Window();
-        Window thread3=new Window();
+        Window4 thread1=new Window4();
+        Window4 thread2=new Window4();
+        Window4 thread3=new Window4();
         thread1.start();
         thread2.start();
         thread3.start();

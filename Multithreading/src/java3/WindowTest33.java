@@ -20,7 +20,7 @@ package java3;
  *
  * @create 2022-04-24 17:05
  */
-class Window implements Runnable {
+class Window3 implements Runnable {
     Object obj=new Object();
 
     public  int ticket=100;
@@ -46,11 +46,11 @@ class Window implements Runnable {
     }
 }
 
-public class WindowTest {
+public class WindowTest33 {
     public static void main(String[] args) {
         Integer totalTicket=100;
 
-        Window w1 = new Window();
+        Window3 w1 = new Window3();
 
         Thread thread1=new Thread(w1);
         thread1.setName("窗口1");
