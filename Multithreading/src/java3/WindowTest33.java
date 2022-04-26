@@ -29,13 +29,14 @@ class Window3 implements Runnable {
         while (true) {
             synchronized (obj){
                 if (ticket > 0) {
+
+                    System.out.println(Thread.currentThread().getName() + "卖票，票号为：" + ticket);
+                    ticket--;
                     try {
                         Thread.sleep(50);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(Thread.currentThread().getName() + "卖票，票号为：" + ticket);
-                    ticket--;
                 }
                 else
                     break;
